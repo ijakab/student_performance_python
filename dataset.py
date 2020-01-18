@@ -5,8 +5,9 @@ from preprocess import preprocess
 SPLIT_RATE = 0.8
 
 random.seed(12)
-dataframe_original = pandas.read_csv('./dataset.csv', sep=r'\s*;\s*')
-dataframe = preprocess(dataframe_original)
+dataframe_original = pandas.read_csv('./dataset.csv', sep=r'\s*;\s*', engine='python')
+dataframe_dropped = dataframe_original.dropna()
+dataframe = preprocess(dataframe_dropped)
 
 # split train and test data
 mask = random.rand(len(dataframe)) < SPLIT_RATE

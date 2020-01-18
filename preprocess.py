@@ -20,10 +20,7 @@ def preprocess(dataframe):
 
     # convert text to numeric
     for key in strMap:
-        print(key)
-
-    # remove incomplete columns
-    dataframe = dataframe.dropna()
+        dataframe[key] = [strMap[key][item] for item in dataframe[key]]
 
     # normalize data
     scaler = MinMaxScaler()

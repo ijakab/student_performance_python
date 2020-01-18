@@ -25,7 +25,3 @@ def getTrainDataset():
 
 def getTestDataset():
     return test
-
-
-def getX(df):
-    print(df)

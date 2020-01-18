@@ -35,3 +35,11 @@ def preprocess(dataframe):
     dataframe = pandas.DataFrame(scaled)
 
     return dataframe
+
+
+def get_x(dataframe):
+    return dataframe[TRACKED_FEATURES]
+
+
+def get_y(dataframe):
+    return dataframe[PREDICT_VALUE]

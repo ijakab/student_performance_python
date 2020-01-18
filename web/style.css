@@ -4,3 +4,8 @@
   height:400px !important;
 
 }
+
+#container{
+  width: 700px;
+  margin: 20px auto;
+}

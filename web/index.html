@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="bootstrap.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
-<button id="callBtn">Send</button>
+<div id="container">
+    <form>
+       <div class="row">
+         <div class="col">
+           <input type="text" class="form-control" placeholder="First name">
+         </div>
+         <div class="col">
+           <input type="text" class="form-control" placeholder="Last name">
+         </div>
+       </div>
+        <br>
+        <div class="row">
+         <div class="col">
+           <input type="text" class="form-control" placeholder="First name">
+         </div>
+         <div class="col">
+           <input type="text" class="form-control" placeholder="Last name">
+         </div>
+       </div>
+        <br>
+        <div class="row">
+            <button type="button" class="btn btn-primary" id="callBtn">Submit</button>
+        </div>
+    </form>
 
-<div class="canvas-holder">
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <div class="canvas-holder">
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
 </div>
+
 
 <script src="chart.js"></script>
 <script src="script.js"></script>

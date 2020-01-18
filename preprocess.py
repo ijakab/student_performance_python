@@ -43,3 +43,8 @@ def get_x(dataframe):
 
 def get_y(dataframe):
     return dataframe[PREDICT_VALUE]
+
+
+def preprocess_and_get_x(dataframe):
+    preprocessed = preprocess(dataframe)
+    return get_x(preprocessed)

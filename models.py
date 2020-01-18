@@ -30,3 +30,11 @@ for modelName in models:
     Y_test_predicted = models[modelName].predict(X_test)
     MSE = mean_squared_error(Y_test, Y_test_predicted)
     print(f'MSE for {modelName} is {MSE}')
+
+
+def predict_all(dataframe):
+    result = {}
+    X = preprocess.get_x(dataframe)
+    for modelName in models:
+        result[modelName] = models[modelName].predict(X)
+    return result

@@ -11,8 +11,13 @@ def predict():
     return jsonify(modelOutputs), 200
 
 
-@app.route('/web', methods=['GET'])
-def serve_web():
+@app.route('/<path:path>', methods=['GET'])
+def serve_web(path):
+    return send_from_directory('web', path)
+
+
+@app.route('/', methods=['GET'])
+def serve_homepage():
     return send_from_directory('web', 'index.html')
 
 

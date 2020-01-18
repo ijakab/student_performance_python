@@ -11,21 +11,78 @@
     <form>
        <div class="row">
          <div class="col">
-           <input type="text" class="form-control" placeholder="First name">
+           <input type="number" class="form-control" placeholder="Broj godina" id="age" value="15" required>
          </div>
          <div class="col">
-           <input type="text" class="form-control" placeholder="Last name">
+           <input type="text" class="form-control" placeholder="Spol M/F" id="sex" value="M" required>
+         </div>
+         <div class="col">
+           <input type="text" class="form-control" placeholder="U-urbano R-ruralno" id="address" value="R" required>
+         </div>
+         <div class="col">
+           <input type="text" class="form-control" placeholder="Velicina obitelji" id="famsize" value="LE3" required>
          </div>
        </div>
         <br>
         <div class="row">
          <div class="col">
-           <input type="text" class="form-control" placeholder="First name">
+           <input type="text" class="form-control" placeholder="Status roditelja, T-zajedno, A-rastavljeni" id="Pstatus" value="A" required>
          </div>
          <div class="col">
-           <input type="text" class="form-control" placeholder="Last name">
+           <input type="number" class="form-control" placeholder="Edukacija majke" id="Medu" value="4" required>
+         </div>
+         <div class="col">
+           <input type="number" class="form-control" placeholder="Edukacija oca" id="Fedu" value="5" required>
+         </div>
+         <div class="col">
+           <input type="text" class="form-control" placeholder="Posao majke" id="Mjob" value="teacher" required>
+         </div>
+         <div class="col">
+           <input type="text" class="form-control" placeholder="Posao oca" id="Fjob" value="services" required>
          </div>
        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+               <input type="number" class="form-control" placeholder="Duzina puta" id="traveltime" value="2" required>
+            </div>
+            <div class="col">
+               <input type="number" class="form-control" placeholder="Tjedno ucenje" id="studytime" value="4" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+               <input type="text" class="form-control" placeholder="Izvannastavne aktivnosti" id="activities" value="yes" required>
+            </div>
+            <div class="col">
+               <input type="text" class="form-control" placeholder="Zelim nastaviti skolovanje" id="higher" value="no" required>
+            </div>
+            <div class="col">
+               <input type="text" class="form-control" placeholder="Imam pristup internetu" id="internet" value="yes" required>
+            </div>
+            <div class="col">
+               <input type="text" class="form-control" placeholder="U vezi sam" id="romantic" value="no" required>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+               <input type="number" class="form-control" placeholder="Slobodno vrijeme" id="freetime" value="3" required>
+            </div>
+            <div class="col">
+               <input type="number" class="form-control" placeholder="Izlazci" id="goout" value="4" required>
+            </div>
+            <div class="col">
+               <input type="number" class="form-control" placeholder="Konzumiranje alkohola tjednom" id="Dalc" value="1" required>
+            </div>
+            <div class="col">
+               <input type="number" class="form-control" placeholder="Konzumiranje alkohola vikendom" id="Walc" value="2" required>
+            </div>
+            <div class="col">
+               <input type="number" class="form-control" placeholder="Izostanci" id="absences" value="58" required>
+            </div>
+        </div>
         <br>
         <div class="row">
             <button type="button" class="btn btn-primary" id="callBtn">Submit</button>

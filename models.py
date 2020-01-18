@@ -1,7 +1,9 @@
 import dataset
 import preprocess
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, BayesianRidge, Lasso
 from sklearn.metrics import mean_squared_error
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.neural_network import MLPRegressor
 
 
 data_train = dataset.getTrainDataset()
@@ -13,7 +15,11 @@ Y_test = preprocess.get_y(data_test)
 
 
 models = {
-    'linearRegression': LinearRegression()
+    'Linear Regression': LinearRegression(),
+    'Bayesian Ridge': BayesianRidge(compute_score=True),
+    'Lasso': Lasso(alpha=0.1),
+    'Random Forest': RandomForestRegressor(max_depth=2, random_state=0),
+    'Multilayer Perceptron': MLPRegressor()
 }
 
 for modelName in models:

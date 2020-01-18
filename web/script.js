@@ -1,18 +1,20 @@
-window.onload = function () {
-    let callBtn = document.getElementById('callBtn')
+const trackedFeatures = ['age','sex','address','famsize','Pstatus','Medu','Fedu','Mjob','Fjob','traveltime','studytime','activities','higher','internet','romantic','freetime','goout','Dalc','Walc','absences']
 
-    callBtn.addEventListener('click', async function () {
-        let data = await callApi()
-        console.log(data)
+
+window.onload = function () {
+    let mainForm = document.getElementById('mainForm')
+
+    mainForm.addEventListener('submit', async function (e) {
+        e.preventDefault()
+        let features = getFeatures()
+        let data = await callApi({features})
         plot(data)
     })
 
-    async function callApi() {
+    async function callApi(data) {
         let res = await fetch('/predict', {
             method: 'POST',
-            body: JSON.stringify({
-                features: [16,"F","U","LE3","T",3,4,"health","teacher",2,3,"yes","no","yes","yes",1,3,2,4,23,0]
-            }),
+            body: JSON.stringify(data),
             mode: 'no-cors', // no-cors, *cors, same-origin
             headers: {
                'Accept': 'application/json',
@@ -26,6 +28,17 @@ window.onload = function () {
             json[key] = Number(json[key])
         }
         return json
+    }
+
+    function getFeatures() {
+        let features = []
+        for(let featureName of trackedFeatures) {
+            let element = document.getElementById(featureName)
+            if(Number(element.value)) features.push(Number(element.value))
+            else features.push(element.value)
+        }
+        features.push(0)
+        return features
     }
 
     function plot(models) {

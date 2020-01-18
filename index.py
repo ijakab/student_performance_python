@@ -5,7 +5,8 @@ app = Flask('student_performance_server')
 @app.route('/', methods=['POST'])
 def create_task():
     features = request.json.get('features')
-    return jsonify(features), 200
+    modelOutputs = models.predict_all_from_features(features, prep=True)
+    return jsonify(modelOutputs), 200
 
 
 app.run()

@@ -32,9 +32,18 @@ for modelName in models:
     print(f'MSE for {modelName} is {MSE}')
 
 
-def predict_all(dataframe):
+def predict_all(dataframe, prep):
     result = {}
-    X = preprocess.get_x(dataframe)
+    X = 0
+    if prep:
+        X = preprocess.preprocess_and_get_x(dataframe)
+    else:
+        X = preprocess.get_x(dataframe)
     for modelName in models:
-        result[modelName] = models[modelName].predict(X)
+        result[modelName] = models[modelName].predict(X)[0]
     return result
+
+
+def predict_all_from_features(features, prep):
+    dataframe = preprocess.dataframe_from_features(features)
+    return predict_all(dataframe, prep)

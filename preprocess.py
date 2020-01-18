@@ -1,9 +1,11 @@
 from sklearn.preprocessing import MinMaxScaler
 import pandas
 
-
 TRACKED_FEATURES = ['age','sex','address','famsize','Pstatus','Medu','Fedu','Mjob','Fjob','traveltime','studytime','activities','higher','internet','romantic','freetime','goout','Dalc','Walc','absences']
+#sample = [15,"F","U","LE3","T",3,4,"health","teacher",2,3,"yes","no","yes","yes",1,3,2,4,23]
 PREDICT_VALUE = 'G3'
+tracked_columns = TRACKED_FEATURES.copy()
+tracked_columns.append(PREDICT_VALUE)
 
 strMap = {
     "sex": {'M': 0, 'F': 1},
@@ -21,8 +23,6 @@ strMap = {
 
 def preprocess(dataframe):
     # select only some columns
-    tracked_columns = TRACKED_FEATURES.copy()
-    tracked_columns.append(PREDICT_VALUE)
     dataframe = dataframe[tracked_columns]
 
     # convert text to numeric
@@ -48,3 +48,9 @@ def get_y(dataframe):
 def preprocess_and_get_x(dataframe):
     preprocessed = preprocess(dataframe)
     return get_x(preprocessed)
+
+
+def dataframe_from_features(features):
+    new_dataframe = pandas.DataFrame(columns=tracked_columns)
+    new_dataframe.loc[0] = features
+    return new_dataframe

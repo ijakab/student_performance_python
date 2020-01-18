@@ -14,6 +14,9 @@ tracked_columns = TRACKED_FEATURES.copy()
 tracked_columns.append(PREDICT_VALUE)
 dataframe = dataframe[tracked_columns]
 
+#remove incomplete columns
+dataframe = dataframe.dropna()
+
 mask = random.rand(len(dataframe)) < SPLIT_RATE
 train = dataframe[mask]
 test = dataframe[~mask]

@@ -9,6 +9,13 @@ strMap = {
     "sex": {'M': 0, 'F': 1},
     "address": {'U': 0, 'R': 1},
     "famsize": {'LE3': 0, 'GT3': 1},
+    "Pstatus": {'T': 0, 'A': 1},
+    'Mjob': {'teacher': 0, 'health': 1, 'services': 2, 'at_home': 3, 'other': 4},
+    'Fjob': {'teacher': 0, 'health': 1, 'services': 2, 'at_home': 3, 'other': 4},
+    'activities': {'yes': 1, 'no': 0},
+    'higher': {'yes': 1, 'no': 0},
+    'internet': {'yes': 1, 'no': 0},
+    'romantic': {'yes': 1, 'no': 0},
 }
 
 

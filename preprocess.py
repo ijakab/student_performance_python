@@ -32,9 +32,9 @@ def preprocess(dataframe):
     # normalize data
     scaler = MinMaxScaler()
     scaled = scaler.fit_transform(dataframe.values)
-    dataframe = pandas.DataFrame(scaled)
+    dataframe_scaled = pandas.DataFrame(scaled, columns=dataframe.columns.tolist())
 
-    return dataframe
+    return dataframe_scaled
 
 
 def get_x(dataframe):

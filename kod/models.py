@@ -1,5 +1,4 @@
-import dataset
-import preprocess
+from kod import preprocess, dataset
 from sklearn.linear_model import LinearRegression, BayesianRidge, Lasso
 from sklearn.metrics import mean_squared_error
 from sklearn.ensemble import RandomForestRegressor

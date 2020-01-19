@@ -1,5 +1,5 @@
 from flask import request, jsonify, Flask, send_from_directory
-import models
+from kod import models
 from json import loads
 
 app = Flask('student_performance_server')

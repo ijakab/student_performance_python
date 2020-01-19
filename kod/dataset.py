@@ -1,6 +1,6 @@
 import pandas
 from numpy import random
-from preprocess import preprocess
+from kod.preprocess import preprocess
 
 SPLIT_RATE = 0.8
 

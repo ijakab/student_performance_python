@@ -28,7 +28,12 @@ for modelName in models:
     # predict test data
     Y_test_predicted = models[modelName].predict(X_test)
     MSE = mean_squared_error(Y_test, Y_test_predicted)
-    print(f'MSE for {modelName} is {MSE}')
+    print(f'MSE test for {modelName} is {MSE}')
+
+    # predict training data
+    Y_train_predicted = models[modelName].predict(X_train)
+    MSE = mean_squared_error(Y_train, Y_train_predicted)
+    print(f'MSE training for {modelName} is {MSE}')
 
 
 def predict_all(dataframe, prep):

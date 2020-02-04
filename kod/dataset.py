@@ -9,6 +9,12 @@ dataframe_original = pandas.read_csv('./dataset.csv', sep=r'\s*;\s*', engine='py
 dataframe_dropped = dataframe_original.dropna()
 dataframe = preprocess(dataframe_dropped)
 
+#display info about dataset
+print(dataframe_original.head())
+print(len(dataframe_original))
+dataframe_original.to_clipboard()
+
+
 # split train and test data
 mask = random.rand(len(dataframe)) < SPLIT_RATE
 train = dataframe[mask]
